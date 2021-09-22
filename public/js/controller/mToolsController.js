@@ -1,9 +1,15 @@
-import { cliInput, cliOutput } from '../config.js';
-
-cliInput.addEventListener('keyup', (e) => submitSearch(e))
+import View from '../view/applicationView.js';
+import MTools from '../model/MTools.js';
+import { cliInput } from '../config.js';
 
 const submitSearch = (e) => {
   if (e.key == "Enter") {
-    let parsedArray = MTools.commandLineParse(cliInput.value)
+    const parsedArray = MTools.commandLineParser(cliInput.value)
+    View.echo(e)
+
+    const result = MTools.evaluatedParsedString(parsedArray)
+    View.echoResult(e, result)
   }
 }
+
+export { submitSearch }
