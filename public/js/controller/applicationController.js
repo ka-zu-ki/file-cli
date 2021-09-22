@@ -1,5 +1,5 @@
-import { cliInput, cliOutput } from './config.js';
-import { CommandNode, CommandLine } from './Command.js';
+import { cliInput, cliOutput } from '../config.js';
+import { CommandNode, CommandLine } from '../model/Command.js';
 
 const commandLine = new CommandLine();
 

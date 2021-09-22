@@ -32,16 +32,6 @@ class CommandLine {
 
     this.iterator = this.tail
   }
-
-  // prevCommand() {
-  //   if (this.iterator == this.tail) {
-  //     this.iterator = this.iterator.prev
-  //     return this.tail.data
-  //   } else {
-  //     this.iterator = this.iterator.prev
-  //     return this.iterator.data
-  //   }
-  // }
 }
 
 export { CommandNode, CommandLine };
