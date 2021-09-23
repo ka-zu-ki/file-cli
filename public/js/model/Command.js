@@ -32,6 +32,10 @@ class CommandLine {
 
     this.iterator = this.tail
   }
+
+  static commandLineParser(input) {
+    return input.trim().split(' ')
+  }
 }
 
 export { CommandNode, CommandLine };

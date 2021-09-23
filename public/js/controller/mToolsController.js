@@ -1,15 +1,18 @@
 import View from '../view/applicationView.js';
 import MTools from '../model/MTools.js';
-import { cliInput } from '../config.js';
 
-const submitSearch = (e) => {
-  if (e.key == "Enter") {
-    const parsedArray = MTools.commandLineParser(cliInput.value)
-    View.echo(e)
+const submitSearch = (e, parsedArray) => {
+  if (e.key == 'Enter') {
+    let validationResponse = MTools.parsedArrayValidator(parsedArray);
 
-    const result = MTools.evaluatedParsedString(parsedArray)
-    View.echoResult(e, result)
+    if (!validationResponse['isValid']) {
+      View.echoResult(e, validationResponse['errorMessage']);
+    }
+    else {
+      const result = MTools.evaluatedParsedString(parsedArray);
+      View.echoResult(e, result);
+    }
   }
-}
+};
 
-export { submitSearch }
+export { submitSearch };

@@ -6,7 +6,12 @@ import { cliInput } from '../config.js';
 export const commandLine = new CommandLine();
 
 cliInput.addEventListener('keydown', (e) => {
-  submitSearch(e)
-  View.echo(e)
+  const parsedArray = CommandLine.commandLineParser(cliInput.value);
+  View.echo(e);
   View.history(e)
+
+  // check package
+  if (parsedArray[0] == 'MTools') {
+    submitSearch(e, parsedArray)
+  }
 });
