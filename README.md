@@ -4,7 +4,23 @@
 
 ターミナルのようにコマンド履歴を辿れる
 
-使用可能なパッケージは以下の通り
+## FileSystem(実装予定)
+木構造、連結リストでLinuxコマンドのような機能を実装する
+command一覧
+```
+touch
+mkdir
+ls
+cd
+pwd
+print
+setContent
+rm
+mv
+cp
+```
+
+現在使用可能なパッケージは以下の通り
 - MTools: 計算を行うパッケージ
 - CCTools: さまざまな国の通貨を変換するパッケージ（開発中）
 
@@ -38,18 +54,3 @@ command一覧
 ## 学んだこと
 連結リスト
 
-## FileSystem(実装予定)
-木構造、連結リストでLinuxコマンドのような機能を実装する
-command一覧
-```
-touch
-mkdir
-ls
-cd
-pwd
-print
-setContent
-rm
-mv
-cp
-```
