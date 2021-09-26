@@ -20,13 +20,17 @@ class Node {
     this.type = type
     this.parent = parent
     this.next = null
-    this.data = new Date()
+    this.date = new Date()
     this.child = new SinglyLinkedList()
     this.content = null
   }
 
   append(node) {
     this.child.append(node)
+  }
+
+  printList() {
+    return this.child.printList()
   }
 }
 
@@ -44,6 +48,16 @@ class SinglyLinkedList {
       iterator = iterator.next
     }
     iterator.next = node
+  }
+
+  printList() {
+    let iterator = this.head
+    let result = ''
+    while (iterator != null) {
+      result += iterator.name + ' '
+      iterator = iterator.next
+    }
+    return result
   }
 }
 

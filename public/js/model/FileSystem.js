@@ -1,3 +1,4 @@
+import View from "../view/applicationView.js"
 import { FileTree, Node } from "./FileData.js"
 
 let fileTree = new FileTree()
@@ -10,8 +11,19 @@ export default class FileSystem {
     switch(command) {
       case 'touch':
         fileTree.currentDir.append(new Node(parsedArray[1], 1, fileTree.currentDir))
-        console.log(fileTree)
-        return
+        View.echoCreated(parsedArray[1])
+        break
+      case 'mkdir':
+        fileTree.currentDir.append(new Node(parsedArray[1], 0, fileTree.currentDir))
+        View.echoCreated(parsedArray[1])
+        break
+      case 'ls':
+        const result = fileTree.currentDir.printList()
+        console.log(result)
+        View.echoFileResult(result)
+        break
+      case 'cd':
+        
     }
   }
 }

@@ -28,6 +28,22 @@ export default class View {
     }
   }
 
+  static echoFileResult(value) {
+      cliOutput.innerHTML += `
+        <p class="text-white text-2xl">
+          : ${value}
+        </p>
+      `;
+  }
+
+  static echoCreated(value) {
+    cliOutput.innerHTML += `
+      <p class="text-white text-2xl">
+        : created ${value}
+      </p>
+    `;
+  }
+
   static history(e) {
     if (commandLine.iterator) {
       if (e.key == 'ArrowUp') {
