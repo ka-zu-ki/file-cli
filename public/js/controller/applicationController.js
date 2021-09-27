@@ -11,8 +11,6 @@ cliInput.addEventListener('keydown', (e) => {
   View.echo(e);
   View.history(e)
 
-  console.log(parsedArray)
-
   if (e.key == 'Enter') FileSystem.execCommand(parsedArray)
 
   // check package
