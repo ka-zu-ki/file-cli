@@ -44,6 +44,14 @@ export default class View {
     `;
   }
 
+  static echoNotDir(value) {
+    cliOutput.innerHTML += `
+      <p class="text-white text-2xl">
+        : ${value} is not directory
+      </p>
+    `;
+  }
+
   static history(e) {
     if (commandLine.iterator) {
       if (e.key == 'ArrowUp') {

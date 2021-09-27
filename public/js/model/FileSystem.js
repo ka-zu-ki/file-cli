@@ -27,13 +27,11 @@ export default class FileSystem {
         if (name == null || name == '..') {
           fileTree.currentDir = fileTree.rootDir;
         }
-
-        const boolean = fileTree.isChildDir(name)
-        console.log(boolean)
-
-        // const nextDir = fileTree.currentDir.getNode(name, 0);
-        // console.log(nextDir)
+        
+        const nextDir = fileTree.currentDir.getNode(name, 0);
         // 子階層に該当のディレクトリが存在する場合
+        if (nextDir) fileTree.currentDir = nextDir
+        else View.echoNotDir(name)
         break;
     }
   }

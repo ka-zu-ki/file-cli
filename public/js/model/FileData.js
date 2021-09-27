@@ -33,8 +33,8 @@ class Node {
     return this.child.printList()
   }
 
-  getNode(name) {
-    return this.child.getNode(name)
+  getNode(name, type) {
+    return this.child.getNode(name, type)
   }
 }
 
@@ -64,22 +64,12 @@ class SinglyLinkedList {
     return result
   }
 
-  getNode(argName) {
-    // let iterator = this.head
-    // while (iterator != null) {
-    //   console.log(iterator)
-    //   console.log(iterator.name)
-    //   console.log(iterator.type)
-    //   if (iterator.name == name) {
-    //     return iterator
-    //   }
-    //   iterator = iterator.next
-    // }
-    // return null
-
+  getNode(name, type) {
     let iterator = this.head
     while (iterator != null) {
-      if (iterator.name = argName) return iterator
+      if (iterator.name == name && iterator.type == type) {
+        return iterator
+      }
       iterator = iterator.next
     }
     return null
@@ -90,11 +80,6 @@ class FileTree {
   constructor() {
     this.rootDir = new Node('root', 0, null)
     this.currentDir = this.rootDir
-  }
-
-  isChildDir(name) {
-    if (this.currentDir.getNode(name)) return true
-    else false
   }
 }
 
